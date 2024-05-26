@@ -1,0 +1,51 @@
+.grid-5{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 45px;
+    background: #172337;
+    color: white;
+    justify-content: center;
+  
+}
+
+.upper-part{
+    position: relative;
+    top: 13vh;
+}
+
+.bold{
+    margin-bottom: 12px;
+    color: #df648b;
+}
+
+.center{
+    justify-content: center;
+    text-align: center;
+}
+
+.lower-part{
+    color: white;
+    background: #df648b;
+    /* position: relative; */
+    top: 13vh;
+    padding: 14px;
+}
+
+.data:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.data{
+    margin: 12px 0px;
+}
+
+@media(width<500px){
+    .about-us,.lower-part,.Upper-part{
+        font-size: 11px;
+    }
+    .grid-5{
+        padding: 12px;
+    }
+
+}

@@ -1,0 +1,63 @@
+.bg-white{
+    background-color: white;
+}
+
+.bold{
+    font-weight: 600;
+}
+
+.flex{
+    display: flex;
+}
+
+.flex-auto{
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+
+.m-12{
+    margin: 12px;
+}
+
+.p-12{
+    padding: 12px;
+}
+
+.p-26{
+    padding: 26px
+}
+
+.sp-even{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.sp-btw{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.flex-notwrap{
+    display: flex;
+
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.link-pink{
+    color: #df648b;
+    text-decoration: underline;
+    font-size: 20px;
+}
+
+.heading-product{
+    font-weight: bold;
+    font-size: 32px;
+}

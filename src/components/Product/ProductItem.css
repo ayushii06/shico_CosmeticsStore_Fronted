@@ -1,0 +1,180 @@
+
+.box{
+    /* padding: 12vh 0vh; */
+   background-color: #f1f3f6;
+    overflow: hidden;
+    /* height: 100vh; */
+}
+
+.name{
+    text-align: center;
+    font-size: 15px;
+    padding: 8px;
+}
+.name:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.mp{
+    color: #ff0000;
+    text-decoration: line-through;
+}
+
+.m-16{
+    margin: 16px;
+    font-size: 21px;
+}
+.sp{
+    color: #259400;
+    font-weight: bold;
+}
+
+.profit{
+    color: green;
+}
+
+.flex{
+    gap: 17px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.flex-left{
+    justify-content: left;
+    margin: 9px 5vw;
+}
+
+
+
+.flex-horizontal{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.user-input{
+    border: 1px solid black;
+    width: 10vw;
+    padding: 6px;
+    border-radius: 5px;
+    background: none;
+}
+
+.user-input:hover{
+    background-color: white;
+    color: black;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 38px;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.card-grid:hover{
+    cursor: pointer;
+}
+
+@media (width >= 943px){
+    /* .card-grid{
+        width: 21vw;
+    height: 66vh;
+    } */
+}
+
+@media (600px<width <= 943px) {
+    .grid{
+        display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    gap: 38px;
+    padding: 23px;
+    }
+
+  }
+  
+  @media (380px <width <= 750px) {
+    .grid{
+        display: grid;
+    grid-template-columns: 1fr 1fr ;
+    gap: 38px;
+    padding: 30px;
+    }
+
+    .user-input{
+        width: 20vw;
+    }
+  }
+
+  @media (width<=380px){
+    .grid{
+        display: grid;
+    grid-template-columns: 1fr ;
+    gap: 38px;
+    padding: 30px;
+    }
+
+    .user-input{
+        width: 16vw;
+    }
+  }
+
+.card-grid{
+    /* width: 21vw;
+    height: 66vh; */
+    border-radius: 5px;
+    background: white;
+}
+
+.flex-content{
+    display: flex;
+    margin: 11px;
+    justify-content: space-evenly;
+}
+
+.image-container{
+    overflow: hidden;
+
+}
+
+
+.product-img{
+    object-fit: fill;
+    height: 100%;
+    width: 100%;
+    border-radius: 2px;
+
+}
+
+.addcart{
+    text-align: center;
+    /* margin: 21px; */
+    width: 97px;
+    font-size: 13px;
+    font-weight: 300;
+    padding: 9px;
+    margin: auto auto 19px auto;;
+    background-color: #393939;
+    border: 1px solid #393939;
+    color: #fff;
+    border-radius: 2px;
+    transition: all 0.2s ease-out;
+}
+
+.addcart:hover{
+    background: white;
+    color: black;
+    cursor: pointer;
+}
+
+.heading-new>p{
+    color: black;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 16px 0px;
+}

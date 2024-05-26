@@ -1,0 +1,27 @@
+.alert-bar{
+    padding: 11px;
+    text-align: center;
+    font-size: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 98%;
+    position: absolute;
+    top: 0px;
+    z-index: 10;
+}
+
+.success{
+    background: green;
+    color: white;
+}
+
+.failure{
+    background: #f31e1e;
+    color: white;
+}
+
+.alert-text{
+    text-align: center;
+    width: 100%;
+}

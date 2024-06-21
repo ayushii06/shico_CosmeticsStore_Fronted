@@ -13,6 +13,8 @@ import Footer from './components/Footer/Footer';
 import ProductState from './context/ProductState';
 import UserContext from './context/UserState'
 import ProductGallery from './components/Product/ProductGallery';
+import Otp from './components/Register/Otp';
+import VerifyOTP from './components/Register/VerifyOTP';
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
         <Route path='/newarrivals' element={<NewArrivals/>}></Route>
         <Route path='/cosmetic' element={<Cosmetics/>}></Route>
         <Route path='/login' element={<Login/>}></Route>
+        <Route path='/otp' element={<Otp/>}></Route>
+        <Route path='/verifyOTP' element={<VerifyOTP/>}></Route>
         <Route path='/register' element={<Register/>}></Route>
         <Route path='/productdesc' element={<ProductDesc/>}></Route>
         <Route path='/cart' element={<Cart/>}></Route>

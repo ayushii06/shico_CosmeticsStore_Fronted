@@ -21,13 +21,13 @@ function ProductDesc() {
   function decCount(){
     setCount(count-1)
   }
-  useEffect(()=>{
-    fetch("http://localhost:5050/",{
-      method:"GET",
-    })
-    .then((res)=>{res.json()})
-    .then((data)=>{console.log(data,"productdata")})
-  },[])
+  // useEffect(()=>{
+  //   fetch("http://localhost:5050/",{
+  //     method:"GET",
+  //   })
+  //   .then((res)=>{res.json()})
+  //   .then((data)=>{console.log(data,"productdata")})
+  // },[])
 
   return (
     <>

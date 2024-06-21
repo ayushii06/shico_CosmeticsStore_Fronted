@@ -3,7 +3,7 @@ import ProductContext from "./ProductContext";
 import { useState } from "react";
 
 const ProductState = (props) => {
-  const host = "https://shico-cosmeticsstore-backend.onrender.com"
+  const host = "http://localhost:5000"
   const productInitial = []
   const [product, setProduct] = useState(productInitial)
 

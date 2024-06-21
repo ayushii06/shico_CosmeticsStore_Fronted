@@ -16,10 +16,12 @@ function Register() {
         setSeller('user')
         setCredentials({ ...credentials, accountType: seller })
     }
+
+    const host = "http://localhost:5050"
   const handleSubmit = async(e)=>{
     e.preventDefault();
-    const response = await fetch("https://shico-cosmeticsstore-backend.onrender.com/api/shico/user/signup", {
-        origin: "https://forthefuture.onrender.com",
+    const response = await fetch(`${host}/api/shico/user/signup`, {
+        origin: "http://localhost:3000",
         mode: "cors",
        method: "POST",
             headers: {
@@ -44,8 +46,8 @@ function Register() {
     
     <>
          <div className="flex column container login-container">
-         <h1 className="login-heading">Hi, Welcome to Shico!</h1>
-        <p className="">Sign Up Now</p>
+         <h1 className="login-heading">Personal details</h1>
+      
         <form onSubmit={handleSubmit}>
            <div className="form-group">
                 <input type="text" id="name" className='form-control' value={credentials.name} onChange={onChange} name="name" placeholder="Enter your name"/>
@@ -63,20 +65,12 @@ function Register() {
                 <input type="password" id="password" className='form-control' value={credentials.cpass} onChange={onChange} name="cpass" placeholder="Confirm your password"/>
             </div>
            
-            <div className="form-group">
-                <input type="password" id="password" className='form-control' value={credentials.password} onChange={onChange} name="password" placeholder="Enter OTP"/>
-            </div>
             <button className="">Register</button>
         </form>
 
         <div className="footer">
             <div className="first-text">already have an account ?</div>
             <div className="register"><Link to='/login'>Log in </Link></div>
-        </div>
-
-        <div className="footer">
-            <div className="first-text">You are registering as buyer. Are you a Seller ?</div>
-            <div className="register"><Link to='/' onClick={handleSeller}>Register as Seller </Link></div>
         </div>
     </div>
 

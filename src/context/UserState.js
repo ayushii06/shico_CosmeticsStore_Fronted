@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const UserState = (props) => {
   //http://localhost:5050/api/shico/user/login
-  const host = "https://shico-cosmeticsstore-backend.onrender.com"
+  const host = "http://localhost:5050"
   const userInitial = []
   const [data, setData] = useState(userInitial)
 

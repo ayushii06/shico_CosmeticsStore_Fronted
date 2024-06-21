@@ -9,9 +9,10 @@ const Login=()=> {
   const onChange = (e) => {
       setCredentials({ ...credentials, [e.target.name]: e.target.value })
   }
+    const host = "http://localhost:5050"
   const handleSubmit = async (e) => {
       e.preventDefault();
-      const response = await fetch("https://shico-cosmeticsstore-backend.onrender.com/api/shico/user/login", {
+      const response = await fetch(`${host}/api/shico/user/login`, {
           method: "POST",
           headers: {
               "Content-Type": "application/json",

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import ProductCard from './ProductCard'
 
 function ProductGallery(props) {
-    const host = "https://shico-cosmeticsstore-backend.onrender.com"
+    const host = "http://localhost:5050"
     const productInitial = []
     const [len,setLen]=useState('0');
     const [product, setProduct] = useState(productInitial)

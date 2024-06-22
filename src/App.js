@@ -10,8 +10,8 @@ import ProductDesc from './components/Product/ProductDesc';
 import Cart from './components/Cart/Cart'
 import User from './components/User/User'
 import Footer from './components/Footer/Footer';
-import ProductState from './context/ProductState';
-import UserContext from './context/UserState'
+// import ProductState from './context/ProductState';
+// import UserContext from './context/UserState'
 import ProductGallery from './components/Product/ProductGallery';
 import Otp from './components/Register/Otp';
 import VerifyOTP from './components/Register/VerifyOTP';
@@ -19,8 +19,8 @@ import VerifyOTP from './components/Register/VerifyOTP';
 function App() {
   return (
     <>
-    <UserContext>
-    <ProductState>
+    {/* <UserContext> */}
+    {/* <ProductState> */}
     <BrowserRouter>
     <Navbar></Navbar>
     <Routes>
@@ -46,8 +46,8 @@ function App() {
   
     </BrowserRouter>
     <Footer></Footer>
-    </ProductState>
-    </UserContext>
+    {/* </ProductState> */}
+    {/* </UserContext> */}
     </>
   );
 }

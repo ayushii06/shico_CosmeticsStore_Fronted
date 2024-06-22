@@ -1,17 +1,17 @@
 import React,{ useEffect, useState } from 'react'
 import '../Product/ProductItem.css'
 import { useContext } from 'react'
-import ProductContext from '../../context/ProductContext'
+// import ProductContext from '../../context/ProductContext'
 import ProductCard from '../Product/ProductCard.js'
 
 function NewArrivals(props) {
   const [len,setLen]=useState('0')
-  const context = useContext(ProductContext);
-    const {product,getProduct}=context;
-    useEffect(()=>{
-      getProduct()
-      setLen(product.length)
-    },[])
+  // const context = useContext(ProductContext);
+  //   const {product,getProduct}=context;
+  //   useEffect(()=>{
+  //     getProduct()
+  //     setLen(product.length)
+  //   },[])
   return (
     <>
  <div className="box">

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styles from '../Register/Register.css'
 import { Link, useNavigate } from 'react-router-dom';
-import { response } from 'express';
+
 
 function Otp() {
 
@@ -14,6 +14,7 @@ function Otp() {
   const onChange = (e) => { setEmail(e.target.value)}
 
   const handleSubmit = async (e) => {
+    console.log(email)
     const response = await fetch(`${host}/api/shico/user/otp`, {
       method: "POST",
       headers: {
@@ -36,12 +37,12 @@ function Otp() {
       <div className="flex column container login-container">
         <h1 className="login-heading">Create your account</h1>
         <p className="">Enter your email to sign up </p>
-        <form onSubmit={handleSubmit}>
+        
           <div className="form-group">
-            <input type="text" id="email" className='form-control' onChange={onChange} name="name" placeholder="someone@example.com" />
+            <input type="text" id="email" className='form-control' onChange={onChange} name="email" placeholder="someone@example.com" />
           </div>
           <button className="">Send OTP</button>
-        </form>
+     
 
         <div className="footer">
           <div className="first-text">already have an account ?</div>

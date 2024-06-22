@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState }
 	from "react";
 
@@ -6,7 +5,7 @@ const OtpInput = ({ length = 4,
 	onOtpSubmit = () => { } }) => {
 	const [otp, setOtp] = useState(
 		new Array(length).fill(""));
-	const inputRefs = useRef([]);
+	const inputRefs = useRef([null]);
 
 	useEffect(() => {
 		if (inputRefs.current[0]) {

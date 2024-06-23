@@ -7,15 +7,14 @@ function Register() {
 
   let navigate = useNavigate();
   const [seller,setSeller] = useState('seller')
-    const [credentials, setCredentials] = useState({ name: "", email: "",mobile:"", password: "", cpass:"" , accountType:"",otp:"" });
+    const [credentials, setCredentials] = useState({ name: "",mobile:"", password: "", cpass:"" ,otp:"" });
     const onChange = (e) => {
         setCredentials({ ...credentials, [e.target.name]: e.target.value })
     }
 
-    const handleSeller = async(e)=>{
-        setSeller('user')
-        setCredentials({ ...credentials, accountType: seller })
-    }
+   
+
+    const email = localStorage.getItem('email')
 
     const host = "http://localhost:5050"
   const handleSubmit = async(e)=>{
@@ -27,7 +26,7 @@ function Register() {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ name: credentials.name, email: credentials.email,mobile: credentials.mobile, password: credentials.password , cpass:credentials.cpass, accountType:credentials.accountType,otp:credentials.otp}),
+            body: JSON.stringify({ name: credentials.name, email: email,mobile: credentials.mobile, password: credentials.password , cpass:credentials.cpass, accountType:"buyer"}),
 
         });
         const json = await response.json();
@@ -52,9 +51,7 @@ function Register() {
            <div className="form-group">
                 <input type="text" id="name" className='form-control' value={credentials.name} onChange={onChange} name="name" placeholder="Enter your name"/>
             </div>
-            <div className="form-group">
-                <input type="email" id="email" className='form-control' value={credentials.email} onChange={onChange} name="email" placeholder="Enter your email"/>
-            </div>
+    
             <div className="form-group">
                 <input type="number" id="number" className='form-control' value={credentials.mobile} onChange={onChange} name="mobile" placeholder="Enter your mobile number"/>
             </div>

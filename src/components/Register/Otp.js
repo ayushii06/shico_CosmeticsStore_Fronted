@@ -25,7 +25,9 @@ function Otp() {
 
     const json = await response.json();
     if (json.success) {
+      localStorage.setItem("email", email)
       navigate("/verifyOTP")
+
     }
     else {
       alert(json.error, "OTP could not be sent")
@@ -41,7 +43,7 @@ function Otp() {
           <div className="form-group">
             <input type="text" id="email" className='form-control' onChange={onChange} name="email" placeholder="someone@example.com" />
           </div>
-          <button className="">Send OTP</button>
+          <button className="" onClick={handleSubmit}>Send OTP</button>
      
 
         <div className="footer">

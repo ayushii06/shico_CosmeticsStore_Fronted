@@ -1,21 +1,29 @@
 import React , {useState} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import OtpInput from '../Register/OtpInput'
+import { set } from 'mongoose'
 
 
 const VerifyOTP = () => {
     const host = "http://localhost:5050"
     const navigate = useNavigate();
-    const [credentials, setCredentials] = useState({otp1: "" , otp2: "", otp3: "", otp4: "", otp5: ""});
-    const onChange = (e) => {
-        setCredentials({ ...credentials, [e.target.name]: e.target.value })
-    }
-    const handleSubmit = async(e)=>{
-        
-        navigate("/register")
-    }
-    const onOtpSubmit = (otp) => {
-        console.log("Login Successful", otp);
+    const email = localStorage.getItem("email")
+    const onOtpSubmit = async(otp) => {
+        console.log(otp)
+        const response = await fetch(`${host}/api/shico/user/verifyotp`,{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({email:email,otp: otp})
+        })
+        const json = await response.json();
+        if(json.success){
+            navigate("/register")
+        }
+        else{
+            alert(json.error, "OTP could not be verified")
+        }
     };
  
   return (
@@ -27,7 +35,7 @@ const VerifyOTP = () => {
                     <OtpInput length={4}
                         onOtpSubmit={onOtpSubmit} />
                 </div>
-            <button className="" onClick={handleSubmit}>Send OTP</button>
+            <button className="">verify OTP</button>
     
 
         <div className="footer">

@@ -7,6 +7,20 @@ function Register() {
 
   let navigate = useNavigate();
   const [seller,setSeller] = useState('seller')
+  const [sellerclick,setSellerClick] = useState(false)
+  const [buyerclick,setBuyerClick] = useState(false)
+
+  const handleBuyer = ()=>{
+    console.log("its buyer")
+    setBuyerClick(true)
+    setSeller('buyer')
+  }
+
+  const handleSeller = ()=>{
+    setSellerClick(true)
+    setSeller('seller')
+  }
+  
     const [credentials, setCredentials] = useState({ name: "",mobile:"", password: "", cpass:"" ,otp:"" });
     const onChange = (e) => {
         setCredentials({ ...credentials, [e.target.name]: e.target.value })
@@ -46,7 +60,10 @@ function Register() {
     <>
          <div className="flex column container login-container">
          <h1 className="login-heading">Personal details</h1>
-      
+         <div className="flex">
+         <div className={sellerclick?"bg-black text-white":"bg-white"} style={{"padding":"12px","border":"1px solid black"}}  onClick={handleSeller}>Seller</div>
+         <div className={sellerclick?"bg-black text-white":"bg-white"} style={{"padding":"12px","border":"1px solid black"}}  onClick={handleBuyer}>Buyer</div>
+         </div>
         <form onSubmit={handleSubmit}>
            <div className="form-group">
                 <input type="text" id="name" className='form-control' value={credentials.name} onChange={onChange} name="name" placeholder="Enter your name"/>

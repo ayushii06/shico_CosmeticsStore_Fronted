@@ -15,6 +15,9 @@ import Footer from './components/Footer/Footer';
 import ProductGallery from './components/Product/ProductGallery';
 import Otp from './components/Register/Otp';
 import VerifyOTP from './components/Register/VerifyOTP';
+import SellerRegister from './components/Seller/SellerRegister';
+import SellerHomePage from './components/Seller/SellerHomePage';
+import AddProduct from './components/Seller/AddProduct';
 
 function App() {
   return (
@@ -41,6 +44,9 @@ function App() {
         <Route path='/hair' element={<ProductGallery category='Hair'/>}></Route>
         <Route path='/nails' element={<ProductGallery category='Nails'/>}></Route>
         <Route path='/eyes' element={<ProductGallery category='Eyes'/>}></Route>
+        <Route path='/sellerRegister' element={SellerRegister}></Route>
+        <Route path='/sellerHome' element={SellerHomePage}></Route>
+        <Route path='/addProduct' element={AddProduct}></Route>
         
     </Routes>
   

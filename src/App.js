@@ -36,7 +36,7 @@ function App() {
         <Route path='/register' element={<Register/>}></Route>
         <Route path='/productdesc' element={<ProductDesc/>}></Route>
         <Route path='/cart' element={<Cart/>}></Route>
-        <Route path='/user' element={<User/>}></Route>
+        <Route path='/user' element={<SellerHomePage/>}></Route>
         <Route path='/lips' element={<ProductGallery category='Lips'/>}></Route>
         <Route path='/face' element={<ProductGallery category='Face'/>}></Route>
         <Route path='/skin' element={<ProductGallery category='Skin'/>}></Route>
@@ -46,7 +46,7 @@ function App() {
         <Route path='/eyes' element={<ProductGallery category='Eyes'/>}></Route>
         <Route path='/sellerRegister' element={SellerRegister}></Route>
         <Route path='/sellerHome' element={SellerHomePage}></Route>
-        <Route path='/addProduct' element={AddProduct}></Route>
+        <Route path='/addproduct' element={<AddProduct></AddProduct>}></Route>
         
     </Routes>
   

@@ -77,3 +77,8 @@
 .bg-white{
     background-color: white;
 }
+
+.fs-3{
+    font-size: 23px;
+    margin: 10px;
+}

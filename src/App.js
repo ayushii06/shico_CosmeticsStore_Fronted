@@ -10,7 +10,7 @@ import ProductDesc from './components/Product/ProductDesc';
 import Cart from './components/Cart/Cart'
 import User from './components/User/User'
 import Footer from './components/Footer/Footer';
-// import ProductState from './context/ProductState';
+import ProductState from './context/ProductState';
 // import UserContext from './context/UserState'
 import ProductGallery from './components/Product/ProductGallery';
 import Otp from './components/Register/Otp';
@@ -23,7 +23,7 @@ function App() {
   return (
     <>
     {/* <UserContext> */}
-    {/* <ProductState> */}
+    <ProductState>
     <BrowserRouter>
     <Navbar></Navbar>
     <Routes>
@@ -52,7 +52,7 @@ function App() {
   
     </BrowserRouter>
     <Footer></Footer>
-    {/* </ProductState> */}
+    </ProductState>
     {/* </UserContext> */}
     </>
   );

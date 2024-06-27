@@ -14,12 +14,6 @@ function ProductCard(props) {
        setOver(false)
       }
 
-   
-    // const[profit,setProfit]=useState(0);
-  
-    // function calculate(mp,sp){
-    //  setProfit(((sp-mp)/mp)*100);
-    // }
     let {product_name,desc,market_price,selling_price,category,imgsrc,imghoversrc,profit}=props;
     
   return (

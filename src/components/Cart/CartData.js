@@ -45,7 +45,7 @@ function CartData() {
             
                 <div className="cart-list">
                     {cart.map((item)=>{
-                        return <CartList key={item._id} item={item}/>
+                        return <CartList key={item._id} product_id={item._id}/>
                     })}
                 </div>
             }

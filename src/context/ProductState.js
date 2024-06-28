@@ -15,7 +15,7 @@ const ProductState = (props) => {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        "Authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2N2QzMjRiMTBlMmM2MGVkNjkxMzgyMyIsImVtYWlsIjoia2FnZ2xlODZAZ21haWwuY29tIiwicm9sZSI6InNlbGxlciIsImlhdCI6MTcxOTUwMDQ0MywiZXhwIjoxNzE5NTg2ODQzfQ.-0Vbc7ZEWcDVoNAinf_Ldr1b_LcBkDvQ8WxJScZJhWY"
+        "Authorization": "Bearer " + localStorage.getItem('token')
       },
     });
 

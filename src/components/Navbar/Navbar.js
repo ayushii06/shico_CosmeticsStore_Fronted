@@ -50,7 +50,7 @@ function Navbar() {
         
    
        <div className="visible">
-            {!localStorage.getItem('token')? <Link to='/otp'><img className="image-svg user" src={user} alt=""/>Signup / Login </Link>:<Link to='/user'><img className="image-svg" src={user} alt=""/>User</Link>}
+            {!localStorage.getItem('token')? <Link to='/otp'><img className="image-svg user" src={user} alt=""/>Signup / Login </Link>:localStorage.getItem('accountType')==='seller'?<Link to='/sellerprofile'><img className="image-svg" src={user} alt=""/>User</Link>:<Link to='/buyerprofile'><img className="image-svg" src={user} alt=""/>User</Link>}
           
         </div>
 {click? <div className="media-query" id="dropdown">

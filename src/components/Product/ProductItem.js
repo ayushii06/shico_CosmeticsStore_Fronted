@@ -18,7 +18,7 @@ function ProductItem(props) {
     <>   
       {
           products.map((product) => {
-            return <ProductCard key={product._id} product_name={product.product_name} desc={product.desc} selling_price={product.selling_price} market_price={product.market_price} category={product.category} profit={product.profit} imgsrc={product.imgsrc} imghoversrc={product.imghoversrc}/>
+            return <ProductCard key={product._id} product_id={product._id} product_name={product.product_name} desc={product.desc} selling_price={product.selling_price} market_price={product.market_price} category={product.category} profit={product.profit} imgsrc={product.imgsrc} imghoversrc={product.imghoversrc}/>
         })
       }
     </>

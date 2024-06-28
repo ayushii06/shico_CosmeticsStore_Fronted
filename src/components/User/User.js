@@ -9,7 +9,7 @@ import payment from "../assets/user-icon/payments.svg"
 import { useEffect } from 'react'
 import {  useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-
+import { Link } from 'react-router-dom'
 
 function User(props) {
   const host = "http://localhost:5050"
@@ -45,7 +45,7 @@ function User(props) {
             <div className="user-section">
                 <div className="content">
                     <img src={file} alt=""/>
-                    <h5>MY ORDERS</h5>
+                    <Link to='/cart'>MY CARTS</Link>
                     <img src={arrow} className="arrow" alt=""/>
                 </div>
 

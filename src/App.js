@@ -11,7 +11,7 @@ import Cart from './components/Cart/Cart'
 import User from './components/User/User'
 import Footer from './components/Footer/Footer';
 import ProductState from './context/ProductState';
-// import UserContext from './context/UserState'
+import UserContext from './context/UserState'
 import ProductGallery from './components/Product/ProductGallery';
 import Otp from './components/Register/Otp';
 import VerifyOTP from './components/Register/VerifyOTP';
@@ -36,7 +36,7 @@ function App() {
         <Route path='/register' element={<Register/>}></Route>
         <Route path='/productdesc' element={<ProductDesc/>}></Route>
         <Route path='/cart' element={<Cart/>}></Route>
-        <Route path='/user' element={<SellerHomePage/>}></Route>
+        <Route path='/buyerprofile' element={<User/>}></Route>
         <Route path='/lips' element={<ProductGallery category='Lips'/>}></Route>
         <Route path='/face' element={<ProductGallery category='Face'/>}></Route>
         <Route path='/skin' element={<ProductGallery category='Skin'/>}></Route>
@@ -45,7 +45,7 @@ function App() {
         <Route path='/nails' element={<ProductGallery category='Nails'/>}></Route>
         <Route path='/eyes' element={<ProductGallery category='Eyes'/>}></Route>
         <Route path='/sellerRegister' element={SellerRegister}></Route>
-        <Route path='/sellerHome' element={SellerHomePage}></Route>
+        <Route path='/sellerprofile' element={SellerHomePage}></Route>
         <Route path='/addproduct' element={<AddProduct></AddProduct>}></Route>
         
     </Routes>

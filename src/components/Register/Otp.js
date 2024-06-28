@@ -38,18 +38,22 @@ function Otp() {
     <>
       <div className="flex column container login-container">
         <h1 className="login-heading">Create your account</h1>
-        <p className="">Enter your email to sign up </p>
+      
         
-          <div className="form-group">
+          <form className="">
+          <p className="">Enter your email to sign up </p>
+          <div className="flex-column ">
             <input type="text" id="email" className='form-control' onChange={onChange} name="email" placeholder="someone@example.com" />
-          </div>
+            </div>
           <button className="" onClick={handleSubmit}>Send OTP</button>
+         
      
 
         <div className="footer">
           <div className="first-text">already have an account ?</div>
           <div className="register"><Link to='/login'>Log in </Link></div>
         </div>
+        </form>
       </div>
 
     </>

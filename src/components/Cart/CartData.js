@@ -1,18 +1,56 @@
-import React from 'react'
+import React,{useEffect, useState} from 'react'
 import './Cart.css'
 import './CartList.css'
 import CartList from './CartList'
 
 function CartData() {
+    const host="http://localhost:5050"
+    const cartInitial = []
+    const [cart, setCart] = useState(cartInitial)
+    const getCart = async() =>{
+        const response = await fetch(`${host}/api/shico/cart/getcart`,{
+            method: 'GET',
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer " + localStorage.getItem('token')
+            }
+            })
+        
+            if(!response.ok){
+                alert("Error in getting cart")
+                console.log(response.error)
+            }
+
+            const json = await response.json();
+            console.log(json)
+
+            if(json.success){
+                setCart(json.cart)
+                console.log(json)
+            }
+            else{
+                alert(json.error)
+            }
+    }
+
+    useEffect(() => {
+        getCart()
+    }, [])
+
   return (
     <>
     <div className="cart-responsive top flex-content ">
         <div className="cart-left">
+            {cart.length===0 ? <div className="empty-cart">Your cart is empty</div>:
+            
+                <div className="cart-list">
+                    {cart.map((item)=>{
+                        return <CartList key={item._id} item={item}/>
+                    })}
+                </div>
+            }
 
-        <CartList/>
-        <CartList/>
-        <CartList/>
-        <CartList/>
+        
         </div>
         <div className="cart-right price-container">
             <p className="">Price Details</p>

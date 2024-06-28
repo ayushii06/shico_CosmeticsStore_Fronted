@@ -23,18 +23,12 @@ const Login=()=> {
       const json = await response.json();
       
       console.log(json)
-      if (json.success) {
-          //Save the auth taken and redirect
-          
-          localStorage.setItem('token', json.token)
-          localStorage.setItem('name', json.user.name)
-          localStorage.setItem('email', json.user.email)
-          localStorage.setItem('password', json.user.password)
-          localStorage.setItem('mobile', json.user.mobile)
+      if (json.success) {     
+        alert("Login Successful")     
+          localStorage.setItem('token', json.accessToken)
+          localStorage.setItem('accountType', json.user.role)
           console.log(json.token)
           navigate("/")
-
-
       }
       else {
           alert("Invalid Credentials")
@@ -49,19 +43,21 @@ const Login=()=> {
   
     <div className="login-container container flex column">
         <h1 className="login-heading">Hi, Welcome to Shico!</h1>
-        <p className="">Log in to your account</p>
+        
         <form action="post" onSubmit={handleSubmit}>
-           <div className="form-group flex-column">
+        <p className="">Log in to your account</p>
+           <div className=" flex-column">
                 <input type="email" id="email" value={credentials.email} onChange={onChange} name="email" placeholder="Enter your email"/>
                 <input type="password" id="password" value={credentials.password} onChange={onChange} name="password" placeholder="Enter your password"/>
             </div>
             <button className="">Verify</button>
-        </form>
-
-        <div className="footer">
+            <div className="footer">
             <div className="first-text">don't have an account yet ?</div>
             <div className="register"><Link to='/register'>create account</Link></div>
         </div>
+        </form>
+
+       
     </div>
     </>
   )

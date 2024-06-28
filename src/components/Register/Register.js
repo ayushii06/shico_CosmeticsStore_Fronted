@@ -60,32 +60,34 @@ function Register() {
     <>
          <div className="flex column container login-container">
          <h1 className="login-heading">Personal details</h1>
-         <div className="flex">
-         <div className={sellerclick?"bg-black text-white":"bg-white"} style={{"padding":"12px","border":"1px solid black"}}  onClick={handleSeller}>Seller</div>
-         <div className={sellerclick?"bg-black text-white":"bg-white"} style={{"padding":"12px","border":"1px solid black"}}  onClick={handleBuyer}>Buyer</div>
-         </div>
+         
         <form onSubmit={handleSubmit}>
-           <div className="form-group">
+        <div className="flex" style={{"margin":"auto auto 37px auto"}}>
+         <div className={sellerclick?"bg-black text-white":"bg-white"} style={{"padding":"12px","border":"1px solid black","cursor":"pointer"}}  onClick={handleSeller}>Seller</div>
+         <div className={buyerclick?"bg-black text-white":"bg-white"} style={{"padding":"12px","border":"1px solid black","cursor":"pointer"}}  onClick={handleBuyer}>Buyer</div>
+         </div>
+           <div className="">
                 <input type="text" id="name" className='form-control' value={credentials.name} onChange={onChange} name="name" placeholder="Enter your name"/>
             </div>
     
-            <div className="form-group">
+            <div className="">
                 <input type="number" id="number" className='form-control' value={credentials.mobile} onChange={onChange} name="mobile" placeholder="Enter your mobile number"/>
             </div>
-            <div className="form-group">
+            <div className="">
                 <input type="password" id="password" className='form-control' value={credentials.password} onChange={onChange} name="password" placeholder="Enter your password"/>
             </div>
-            <div className="form-group">
+            <div className="">
                 <input type="password" id="password" className='form-control' value={credentials.cpass} onChange={onChange} name="cpass" placeholder="Confirm your password"/>
             </div>
            
             <button className="">Register</button>
-        </form>
-
-        <div className="footer">
+            <div className="footer">
             <div className="first-text">already have an account ?</div>
             <div className="register"><Link to='/login'>Log in </Link></div>
         </div>
+        </form>
+
+      
     </div>
 
     </>

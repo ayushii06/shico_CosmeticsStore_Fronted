@@ -7,7 +7,7 @@ import CartData from './CartData'
 function Cart() {
   return (
     <>
-    {!localStorage.getItem('token')? <div className="height top bg-white">
+    {!sessionStorage.getItem('token')? <div className="height top bg-white">
         <img className="product-img cart-img" src={emptycartimg} />
         <p className="">Missing Cart Items ? </p>
         <p className="">Login to see the items you added previously

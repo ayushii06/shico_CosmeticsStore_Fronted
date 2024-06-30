@@ -25,8 +25,8 @@ const Login=()=> {
       console.log(json)
       if (json.success) {     
         alert("Login Successful")     
-          localStorage.setItem('token', json.accessToken)
-          localStorage.setItem('accountType', json.user.role)
+          sessionStorage.setItem('token', json.accessToken)
+          sessionStorage.setItem('accountType', json.user.role)
           console.log(json.token)
           navigate("/")
       }

@@ -17,12 +17,12 @@ function ProductCard(props) {
 
   async function handleClick() {
     console.log(props.product_id)
-    if (localStorage.getItem('token')) {
+    if (sessionStorage.getItem('token')) {
       const response = await fetch(`${host}/api/shico/cart/addtocart`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": "Bearer " + localStorage.getItem('token'),
+          "Authorization": "Bearer " + sessionStorage.getItem('token'),
         },
         body: JSON.stringify({
           productId: props.product_id,
@@ -51,6 +51,10 @@ function ProductCard(props) {
 
     }
   }
+
+  function handleProduct(){
+
+  }
   let { product_name, market_price, selling_price, imgsrc, imghoversrc } = props;
 
   const profit = market_price - selling_price;
@@ -62,7 +66,7 @@ function ProductCard(props) {
           <img className='product-img' onMouseOver={onMouseOver} onMouseOut={onMouseOut} src={over ? imghoversrc : imgsrc} />
 
         </div>
-        <div className="name">{product_name}</div>
+        <div className="name" onClick={handleProduct}>{product_name}</div>
         <div className="flex m-16">
           <div className="sp">₹{selling_price}</div>
           <div className="mp">

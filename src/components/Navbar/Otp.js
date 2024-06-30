@@ -25,7 +25,7 @@ function Otp() {
 
     const json = await response.json();
     if (json.success) {
-      localStorage.setItem("email", email)
+      sessionStorage.setItem("email", email)
       navigate("/verifyOTP")
 
     }

@@ -4,22 +4,23 @@ import './CartList.css'
 
 function CartList(props) {
   const host = "http://localhost:5050"
-  const {product_id } = props
+  const {productId,productName,price, imgsrc } = props
+ 
 
 
   const handleDelete = async() =>{
-    console.log(`${host}/api/shico/cart/delete/${product_id}`)
-    const response = await fetch(`${host}/api/shico/cart/delete/${product_id}`,{
+    console.log(`${host}/api/shico/cart/delete/${productId}`)
+    const response = await fetch(`${host}/api/shico/cart/delete/${productId}`,{
       method: 'DELETE',
       headers: {
           "Content-Type": "application/json",
-          "Authorization": "Bearer " + localStorage.getItem('token')
+          "Authorization": "Bearer " + sessionStorage.getItem('token')
       }
     })
 
     if(!response.ok){
         alert("Error in deleting item")
-        console.log(response.error)
+        console.log(response.message)
     }
 
     const json = await response.json();
@@ -29,7 +30,7 @@ function CartList(props) {
         alert("Item deleted successfully")
     }
     else{
-        alert(json.error)
+        alert(json.message)
     }
 
   }
@@ -38,10 +39,10 @@ function CartList(props) {
     <>
     <div className="cart-container flex-content">
    
-        <img className="product-img cart-img-list" src={img} />
+        <img className="product-img cart-img-list" src={imgsrc} />
         <div className="cart-right">
-        <div className="cart-title">Power Plush Longwear Foundation</div>
-        <div className="price">₹279</div>
+        <div className="cart-title">{productName}</div>
+        <div className="price">₹{price}</div>
         <div className="flex-content m-0">
 
         <div className="remove" onClick={handleDelete}>Remove</div>

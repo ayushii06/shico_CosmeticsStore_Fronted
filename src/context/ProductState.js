@@ -15,7 +15,6 @@ const ProductState = (props) => {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": "Bearer " + localStorage.getItem('token')
       },
     });
 
@@ -25,7 +24,7 @@ const ProductState = (props) => {
         setProduct(json.products)
     }
     else{
-        alert("server error")
+        console.log(json.message)
     }
     
   }

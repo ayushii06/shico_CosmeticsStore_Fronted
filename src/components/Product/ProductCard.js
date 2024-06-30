@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
 
 import { Link } from 'react-router-dom'
 
@@ -52,8 +53,9 @@ function ProductCard(props) {
     }
   }
 
-  function handleProduct(){
-
+  const handleProduct =()=>{
+    console.log("product clicked");
+    navigate(`/productdesc/${props.product_id}`)
   }
   let { product_name, market_price, selling_price, imgsrc, imghoversrc } = props;
 

@@ -34,7 +34,7 @@ function App() {
         <Route path='/otp' element={<Otp/>}></Route>
         <Route path='/verifyOTP' element={<VerifyOTP/>}></Route>
         <Route path='/register' element={<Register/>}></Route>
-        <Route path='/productdesc' element={<ProductDesc/>}></Route>
+        <Route path='/productdesc/:productid' element={<ProductDesc/>}></Route>
         <Route path='/cart' element={<Cart/>}></Route>
         <Route path='/buyerprofile' element={<User/>}></Route>
         <Route path='/lips' element={<ProductGallery category='Lips'/>}></Route>

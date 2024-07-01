@@ -60,20 +60,23 @@ function ProductDesc() {
     <>
     {!product ? <div>Loading...</div> : 
     <>
-      <div className='flex-content top'>
+      <div className='flex-content top' style={{"alignItems":"normal"}}>
         <div className='left-content'>
           <div className="flex-start">
           <img className="image-svg" src={left} /> <p className="upper-p">Back</p></div>
           <img className='product-img leftcontent-img' src={product.imgsrc}></img>
           
         </div>
-        <div className="right">
+        <div className="right" style={{"gap":"22px"}}>
    
             <div className='title-content'>
               <p className="title">{product.product_name}</p>
               <img className="image-svg" src={heartsvg} />
             </div>
-            <div className="price-tag">₹ {product.selling_price}</div>
+            <div className="flex">
+            <div className="price-tag sp">₹ {product.selling_price}</div>
+            <div className="price-tag mp">₹ {product.market_price}</div>
+            </div>
             <div className="reviews">
               <img className="image-svg star" src={starfill} />
               <img className="image-svg star" src={starfill} />

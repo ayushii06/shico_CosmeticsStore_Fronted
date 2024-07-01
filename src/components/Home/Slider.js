@@ -5,7 +5,7 @@ function Slider(props) {
   let header = props.header
   return (
     <>
-        <div className="slider-heading p-26 sp-btw">
+        <div className="slider-heading p-26 sp-btw" style={{"width":"100%"}}>
             <p className="heading-product">{header}</p>
             <p className="link-pink">View All</p>
         </div>

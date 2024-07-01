@@ -28,6 +28,7 @@ function User(props) {
     localStorage.removeItem('name')
     localStorage.removeItem('email')
     localStorage.removeItem('mobile')
+    alert('Logged out successfully')
     navigate('/')
    }
 
@@ -43,9 +44,9 @@ function User(props) {
                 </div>
             </div>
             <div className="user-section">
-                <div className="content">
+                <div className="content" style={{"alignItems":"center"}}>
                     <img src={file} alt=""/>
-                    <Link to='/cart'>MY CARTS</Link>
+                    <Link to='/cart' style={{"color":"black"}}>MY CARTS</Link>
                     <img src={arrow} className="arrow" alt=""/>
                 </div>
 
@@ -68,7 +69,7 @@ function User(props) {
 
                 <div className="content" onClick={handleClick}>
                     <img src={logout} alt=""/>
-                    <h5>Logout</h5>
+                    <h5 style={{"cursor":"pointer"}}>Logout</h5>
                 </div>
             </div>
         </div>

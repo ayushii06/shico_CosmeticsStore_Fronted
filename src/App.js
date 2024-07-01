@@ -47,7 +47,8 @@ function App() {
         <Route path='/sellerRegister' element={SellerRegister}></Route>
         <Route path='/sellerprofile' element={SellerHomePage}></Route>
         <Route path='/addproduct' element={<AddProduct></AddProduct>}></Route>
-        
+        <Route path='*' element={<h1>404 Not Found</h1>}></Route>
+        <Route path='/error/:error_message' element={<h1>Error</h1>}></Route>
     </Routes>
   
     </BrowserRouter>

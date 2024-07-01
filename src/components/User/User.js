@@ -14,20 +14,41 @@ import { Link } from 'react-router-dom'
 function User(props) {
   const host = "http://localhost:5050"
   let navigate=useNavigate();
-  const userInitial = []
-  const [data, setData] = useState(userInitial)
+  const [data, setData] = useState([])
 
   let names = localStorage.getItem('name')
   let email = localStorage.getItem('email')
   let mobile = localStorage.getItem('mobile')
  
   //GET ALL NOTES
+
+  const getUser = async()=>{
+    const response = await fetch(`${host}/api/shico/profile/getProfile`,{
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer '+sessionStorage.getItem('token')
+        }
+    }) 
+if(!response.ok){
+    navigate(`/error/${json.message}`)
+}
+const json = await response.json()
+    if(json.success){
+        setData(json.data)
+        
+    }
+    else{
+        navigate(`/error/${json.message}`)
+    }
+  }
+
+  useEffect(()=>{
+    getUser()
+  },[])
  
    function handleClick(){
-    localStorage.removeItem('token')
-    localStorage.removeItem('name')
-    localStorage.removeItem('email')
-    localStorage.removeItem('mobile')
+    sessionStorage.removeItem('token')
     alert('Logged out successfully')
     navigate('/')
    }
@@ -40,7 +61,7 @@ function User(props) {
                 <img src={user} alt="" height="52px" width="52px"/>
                 <div>
                     <h5>Hello,</h5>
-                    <h3>{names}</h3>
+                    <h3>{data.name}</h3>
                 </div>
             </div>
             <div className="user-section">
@@ -57,7 +78,7 @@ function User(props) {
                     
                 </div>
                 <div className="down-content">
-                    <h5>Profile Information</h5>
+                    <h5>Manage Profile</h5>
                     <h5>Manage Addresses</h5>
                 </div>
             </div>
@@ -79,16 +100,15 @@ function User(props) {
                     <h4 className='bold-black'>Personal Information</h4>
                     <h5>Edit</h5>
                 </div>
-                <input type="text" value={names}/>
+                <input type="text" value={data.name}/>
             </div>
 
             <div className="main-heading">
                 <div className="upper-heading">
                     <h4 className='bold-black'>Email Address</h4>
                     <h5>Edit</h5>
-                    <h5 id="verify"><a href="./verify.html">Verify Email</a></h5>
                 </div>
-                <input type="email" value={email}/>
+                <input type="email" value={data.email}/>
             </div>
 
             <div className="main-heading">
@@ -96,7 +116,7 @@ function User(props) {
                     <h4 className='bold-black'>Mobile Number</h4>
                     <h5>Edit</h5>
                 </div>
-                <input type="number" value={mobile}/>
+                <input type="number" value={data.mobile}/>
             </div>
 
         </div>

@@ -10,6 +10,16 @@
     align-items: center;
 }
 
+.review-btn{
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+    padding: 12px 17px;
+    background: #393939;
+    margin: 0px;
+
+}
+
 .left-content{
     width: 93%;
     display: flex;

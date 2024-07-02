@@ -10,8 +10,11 @@ import plus from '../assets/svg/plus-solid.svg'
 import minus from '../assets/svg/minus-solid.svg'
 import ProductItem from './ProductItem'
 import left from '../assets/svg/left.svg'
+import Review from './Review'
+import {  useNavigate } from 'react-router-dom'
 
 function ProductDesc() {
+  const navigate = useNavigate();
   const productId = window.location.pathname.split('/')[2]
   console.log(productId)
   let [count,setCount]=useState(1);
@@ -54,6 +57,33 @@ function ProductDesc() {
   function decCount(){
     setCount(count-1)
   }
+
+  const [buyed , setBuyed] = useState(false)
+  const handleReview = async()=>{
+    const response = await fetch(`${host}/api/shico/rating/productBuyed`,{
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + sessionStorage.getItem('token')
+      },
+      body: JSON.stringify({
+        productId: productId
+      })
+    })
+    const json = await response.json()
+   console.log(json)
+
+    if(json.success){
+      alert('You have buyed this product')
+    }
+    else{
+      console.log(`/error/${json.message}`)
+      navigate(`/error/${json.message}`)
+    }
+
+    
+
+  }
  
 
   return (
@@ -83,6 +113,7 @@ function ProductDesc() {
               <img className="image-svg star" src={starfill} />
               <img className="image-svg star" src={starfill} />
               <img className="image-svg star" src={star} />
+              <div className="review">(23)</div>
             </div>
             <div className="delivery">
               <div className="delivery-uppercontent">
@@ -110,6 +141,16 @@ function ProductDesc() {
 
         </div>
       </div>
+      <div className="">
+        <div className="flex">
+      <p className="heading-new">Rating and Reviews</p>
+      <div className="review-btn" onClick={handleReview}>Write a review</div>
+        
+        </div>
+        <Review/>
+        <Review/>
+        <Review/>
+      </div>
       <div className="suggest-gallery">
         <p className="heading-new">Similar Products</p>
         <div className="grid">
@@ -118,7 +159,9 @@ function ProductDesc() {
          <ProductItem/>
          <ProductItem/>
         </div>
-      </div></>}
+      </div>
+     
+      </>}
     </>
   )
 }

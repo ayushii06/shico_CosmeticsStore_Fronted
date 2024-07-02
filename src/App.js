@@ -18,6 +18,7 @@ import VerifyOTP from './components/Register/VerifyOTP';
 import SellerRegister from './components/Seller/SellerRegister';
 import SellerHomePage from './components/Seller/SellerHomePage';
 import AddProduct from './components/Seller/AddProduct';
+import Error from './components/Error/Error';
 
 function App() {
   return (
@@ -48,7 +49,7 @@ function App() {
         <Route path='/sellerprofile' element={SellerHomePage}></Route>
         <Route path='/addproduct' element={<AddProduct></AddProduct>}></Route>
         <Route path='*' element={<h1>404 Not Found</h1>}></Route>
-        <Route path='/error/:error_message' element={<h1>Error</h1>}></Route>
+        <Route path='/error/:error_message' element={<Error/>}></Route>
     </Routes>
   
     </BrowserRouter>

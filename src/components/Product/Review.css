@@ -1,0 +1,19 @@
+.rating-box{
+    margin: 13px 33px;
+    background: aliceblue;
+    text-align: left;
+    padding: 34px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    font-size: 18px;
+}
+
+.rate{
+    color: white;
+    border-radius: 29px;
+    gap: 0px;
+    background: #22dc22;
+    padding: 4px 8px;
+
+}

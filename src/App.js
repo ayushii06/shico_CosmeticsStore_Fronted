@@ -19,6 +19,7 @@ import SellerRegister from './components/Seller/SellerRegister';
 import SellerHomePage from './components/Seller/SellerHomePage';
 import AddProduct from './components/Seller/AddProduct';
 import Error from './components/Error/Error';
+import AddReview from './components/Product/AddReview';
 
 function App() {
   return (
@@ -50,6 +51,8 @@ function App() {
         <Route path='/addproduct' element={<AddProduct></AddProduct>}></Route>
         <Route path='*' element={<h1>404 Not Found</h1>}></Route>
         <Route path='/error/:error_message' element={<Error/>}></Route>
+        <Route path='/addreview/:prodId' element={<AddReview/>}></Route>
+
     </Routes>
   
     </BrowserRouter>

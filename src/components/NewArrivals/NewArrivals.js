@@ -31,7 +31,7 @@ function NewArrivals(props) {
         <div className="grid">
 {
           product.map((product) => {
-            return <ProductCard key={product._id} product_name={product.product_name} desc={product.desc} selling_price={product.selling_price} market_price={product.market_price} profit={product.profit} imgsrc={product.imgsrc} imghoversrc={product.imghoversrc} category={product.category}/>
+            return <ProductCard key={product._id} product_id={product._id} product_name={product.product_name} desc={product.desc} selling_price={product.selling_price} market_price={product.market_price} profit={product.profit} imgsrc={product.imgsrc} imghoversrc={product.imghoversrc} category={product.category}/>
         })
     
    

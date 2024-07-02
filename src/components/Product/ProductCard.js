@@ -15,9 +15,10 @@ function ProductCard(props) {
   }
 
   const host = "http://localhost:5050"
+  const prodId = props.product_id
 
   async function handleClick() {
-    console.log(props.product_id)
+    console.log(prodId)
     if (sessionStorage.getItem('token')) {
       const response = await fetch(`${host}/api/shico/cart/addtocart`, {
         method: "POST",
@@ -26,7 +27,7 @@ function ProductCard(props) {
           "Authorization": "Bearer " + sessionStorage.getItem('token'),
         },
         body: JSON.stringify({
-          productId: props.product_id,
+          productId: prodId,
           quantity: "1",
         })
       })
@@ -55,7 +56,7 @@ function ProductCard(props) {
 
   const handleProduct =()=>{
     console.log("product clicked");
-    navigate(`/productdesc/${props.product_id}`)
+    navigate(`/productdesc/${prodId}`)
   }
   let { product_name, market_price, selling_price, imgsrc, imghoversrc } = props;
 

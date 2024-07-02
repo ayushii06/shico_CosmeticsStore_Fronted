@@ -51,7 +51,7 @@ function ProductGallery(props) {
         <div className="grid">
             { product===null ? <h1>{console.log(product)}loading...</h1>:
                 product.map((product)=>{
-                    return <ProductCard  key={product._id} product_name={product.product_name} selling_price={product.selling_price} market_price={product.market_price} profit={product.profit} imgsrc={product.imgsrc} imghoversrc={product.imghoversrc}/>
+                    return <ProductCard  key={product._id} product_id={product._id} product_name={product.product_name} selling_price={product.selling_price} market_price={product.market_price} profit={product.profit} imgsrc={product.imgsrc} imghoversrc={product.imghoversrc}/>
                 })
             }
         </div>

@@ -35,6 +35,8 @@ const Login=()=> {
       }
 
   }
+
+  
   
   return (
     <>
@@ -51,6 +53,10 @@ const Login=()=> {
                 <input type="password" id="password" value={credentials.password} onChange={onChange} name="password" placeholder="Enter your password"/>
             </div>
             <button className="">Verify</button>
+            <div className="footer">
+            <div className="first-text">Forgot Password?</div>
+            <div className="register"><Link to='/reset'>Reset</Link></div>
+        </div>
             <div className="footer">
             <div className="first-text">don't have an account yet ?</div>
             <div className="register"><Link to='/register'>create account</Link></div>

@@ -89,10 +89,35 @@ function ProductDesc() {
     }
 
 
-
   }
 
+  function handleBack(){
+    navigate(-1)
+  }
 
+  const handleCart = async() =>{
+    const response = await fetch(`${host}/api/shico/cart/addtocart`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": "Bearer " + sessionStorage.getItem('token'),
+        },
+        body: JSON.stringify({
+          productId: productId,
+          quantity: count,
+        })
+      })
+
+      const json = await response.json();
+      console.log(json)
+
+      if(json.success){
+        alert('Product added to cart successfully')
+      }
+      else{
+        alert(json.message)
+      }
+  }
   return (
     <>
       {!product ? <div>Loading...</div> :
@@ -100,7 +125,7 @@ function ProductDesc() {
           <div className='flex-content top' style={{ "alignItems": "normal" }}>
             <div className='left-content'>
               <div className="flex-start">
-                <img className="image-svg" src={left} /> <p className="upper-p">Back</p></div>
+                <img onClick={handleBack} className="image-svg" src={left} /> <p onClick={handleBack} className="upper-p" style={{"cursor":"pointer"}}>Back</p></div>
               <img className='product-img leftcontent-img' src={product.imgsrc}></img>
 
             </div>
@@ -108,7 +133,7 @@ function ProductDesc() {
 
               <div className='title-content'>
                 <p className="title">{product.product_name}</p>
-                <img className="image-svg" src={heartsvg} />
+                <img className="image-svg" src={heartsvg} onClick={handleCart} />
               </div>
               <div className="flex">
                 <div className="price-tag sp">₹ {product.selling_price}</div>
@@ -154,7 +179,7 @@ function ProductDesc() {
               <div className="review-btn" onClick={handleReview}>Write a review</div>
 
             </div>
-            {rating === null ? <div>No one has rated this yet</div> :
+            {rating.length === 0 ? <div className='title' style={{'margin':"12px 32px"}}>No one has rated this yet</div> :
               rating.map((rate) => {
                 return <Review key={rate._id} star={rate.rate} desc={rate.desc} />
               })

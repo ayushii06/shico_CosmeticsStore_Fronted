@@ -11,7 +11,6 @@ import Cart from './components/Cart/Cart'
 import User from './components/User/User'
 import Footer from './components/Footer/Footer';
 import ProductState from './context/ProductState';
-import UserContext from './context/UserState'
 import ProductGallery from './components/Product/ProductGallery';
 import Otp from './components/Register/Otp';
 import VerifyOTP from './components/Register/VerifyOTP';
@@ -20,19 +19,23 @@ import SellerHomePage from './components/Seller/SellerHomePage';
 import AddProduct from './components/Seller/AddProduct';
 import Error from './components/Error/Error';
 import AddReview from './components/Product/AddReview';
+import ScrollToTop from './components/ScrollToTop';
+import Reset from './components/Login/Reset';
+import NewPass from './components/Login/NewPass';
 
 function App() {
   return (
     <>
-    {/* <UserContext> */}
     <ProductState>
     <BrowserRouter>
+    <ScrollToTop/>
     <Navbar></Navbar>
     <Routes>
         <Route exact path='/' element={<Home/>}></Route>
         <Route path='/newarrivals' element={<NewArrivals/>}></Route>
         <Route path='/cosmetic' element={<Cosmetics/>}></Route>
         <Route path='/login' element={<Login/>}></Route>
+        <Route path='/reset' element={<Reset/>}></Route>
         <Route path='/otp' element={<Otp/>}></Route>
         <Route path='/verifyOTP' element={<VerifyOTP/>}></Route>
         <Route path='/register' element={<Register/>}></Route>
@@ -52,13 +55,14 @@ function App() {
         <Route path='*' element={<h1>404 Not Found</h1>}></Route>
         <Route path='/error/:error_message' element={<Error/>}></Route>
         <Route path='/addreview/:prodId' element={<AddReview/>}></Route>
+        <Route path='/resetPassword/:token' element={<NewPass/>}></Route>
+
 
     </Routes>
   
     </BrowserRouter>
     <Footer></Footer>
     </ProductState>
-    {/* </UserContext> */}
     </>
   );
 }
